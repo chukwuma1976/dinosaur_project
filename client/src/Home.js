@@ -1,7 +1,7 @@
 import React from 'react'
 
 function Home() {
-    const dinoBackground = "https://cdn.britannica.com/50/8050-050-D930CD43/Mesozoic-Era-Age-of-Dinosaurs-periods-dinosaurs.jpg"
+    const dinoBackground = "https://wallpaperaccess.com/full/1234923.jpg"
   return (
     <div className='home-page'>
         <main>
