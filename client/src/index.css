@@ -1,0 +1,77 @@
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+.dinosaur-name {
+  font-size: large;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
+}
+
+.home-page img {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.home-page main {
+  position: fixed;
+  left: 20%;
+  background-color: white;
+  border-radius: 1em;
+}
+
+.informaton {
+  display: flex;
+  justify-content: center;
+}
+.info p {
+  font-size: 1.5em;
+}
+.info{
+  display: inline-block;
+}
+
+.navbar {
+  display: inline-block;
+  width: 110px;
+  padding: 10px;
+  margin: 0 6px 6px;
+  background: purple;
+  color: white
+}
+
+.navigation {
+  padding: 5px;
+  background: lightslategray;
+  height: 100%;
+  position: sticky;
+}
+
+.profile {
+  display: inline-block;
+  width: 200px;
+  height: 400px;
+  padding: 20px;
+  margin: 10px;
+  border: 1px solid blue;
+  background: silver;
+  border-radius: 1rem;
+}
+
+.profile img {
+  width: 200px;
+  height: auto;
+}
