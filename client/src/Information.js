@@ -5,7 +5,7 @@ function Information() {
     const {periods, regions} = useContext(UserContext)
 
     const regionsList = regions.map(region=><li key={region.id}>{region.name}</li>)
-    const periodsList = periods.map(period=><li key={period.id}>{period.name}: {period.description}</li>)
+    const periodsList = periods.map(period=><li key={period.id}>{period.name} period: {period.description}</li>)
     const theWorld = "https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
 
   return (

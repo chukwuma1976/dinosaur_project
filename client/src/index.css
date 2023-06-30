@@ -31,15 +31,15 @@ h1, h2, h3, h4, h5, h6 {
   left: 20%;
   right: 20%;
   top: 20%;
-  background-color: lightblue;
-  border-radius: 1em;
+  /* background-color: lightblue; */
+  /* border-radius: 1em; */
 }
 
 .informaton {
   display: flex;
   justify-content: center;
-  top: 10%;
 }
+
 .info p {
   font-size: 1.5em;
 }
@@ -48,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .list {
-  top: 15%;
+  top: 5%;
   position: absolute;
 }
 
