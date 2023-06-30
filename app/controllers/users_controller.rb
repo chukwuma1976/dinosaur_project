@@ -6,6 +6,7 @@ class UsersController < ApplicationController
         user = User.create!(user_params)
         if user.valid?
             user.create_collection(user_id: user.id)
+            fill_collection_with_dinosaurs(user.collection)
             render json: user, status: :created
             session[:user_id] = user.id
         else
@@ -18,6 +19,16 @@ class UsersController < ApplicationController
             render json: current_user, status: :created
         else
             render json: {errors: "No current user"}, status: :unauthorized
+        end
+    end
+
+    private
+
+    def fill_collection_with_dinosaurs(collection)
+        dinosaurs = Dinosaur.all
+        dinosaurs.each do |dinosaur|
+            new_dino = Dinosaur.create(dinosaur)
+            collection.dinosaurs << new_dino
         end
     end
 
