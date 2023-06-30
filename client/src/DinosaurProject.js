@@ -7,6 +7,7 @@ import Login from './Login';
 import Home from './Home';
 import NavBar from './NavBar';
 import Information from './Information';
+import SignOut from './SignOut';
 
 function DinosaurProject() {
   const {user, setUser, dinosaurs} = useContext(UserContext)
@@ -19,6 +20,7 @@ function DinosaurProject() {
             <Route path='/' element={<Home/>} />
             <Route path='/dinosaurs_' element={<DinosaurList dinosaurs={dinosaurs} />} />
             <Route path='/information' element={<Information />} />
+            <Route path='/logout' element={<SignOut />}/>
         </Routes>     
     </div>
   );

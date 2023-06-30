@@ -25,6 +25,13 @@ function NavBar(){
           >
             Information
           </NavLink>
+          <NavLink
+            to="/logout"
+            style={({isActive}) => ({background: isActive ? 'red' : ''})}
+            className="navbar"
+          >
+            Log out
+          </NavLink>
         </div>
       );
 }
