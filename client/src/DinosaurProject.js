@@ -20,7 +20,7 @@ function DinosaurProject() {
             <Route path='/' element={<Home/>} />
             <Route path='/dinosaurs_' element={<DinosaurList dinosaurs={dinosaurs} />} />
             <Route path='/information' element={<Information />} />
-            <Route path='/logout' element={<SignOut />}/>
+            <Route path='/logout' element={<SignOut />} />
         </Routes>     
     </div>
   );

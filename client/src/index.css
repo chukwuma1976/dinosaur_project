@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: lightcyan;
 }
 
 code {
@@ -14,6 +15,13 @@ code {
 
 .dinosaur-name {
   font-size: large;
+}
+
+.filter {
+  display: inline-block;
+}
+.filter label {
+  padding: 0 10px;
 }
 
 .form {
@@ -48,8 +56,6 @@ h1, h2, h3, h4, h5, h6 {
   left: 20%;
   right: 20%;
   top: 20%;
-  /* background-color: lightblue; */
-  /* border-radius: 1em; */
 }
 
 .informaton {
@@ -107,5 +113,6 @@ h1, h2, h3, h4, h5, h6 {
 
 .profile img {
   width: 200px;
-  height: auto;
+  height: 120px;
+  object-fit: cover;
 }

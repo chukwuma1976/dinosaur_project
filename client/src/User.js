@@ -14,7 +14,6 @@ function UserProvider({children}) {
             }
         })
     }, [])
-    console.log(user)
 
     useEffect(() => {
       fetch('/dinosaurs')
