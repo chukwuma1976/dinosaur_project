@@ -9,9 +9,17 @@ function DinosaurList({dinosaurs}) {
   const [letter, setLetter] = useState("")
   const [regions, setRegions] = useState("")
   const [periods, setPeriods] = useState("")
-  const filteredByName = dinosaurs.filter(dino => dino.name.toLowerCase().includes(name.toLowerCase()));
-  const filteredByLetter = filteredByName.filter(dino => dino.name[0].toUpperCase().includes(letter))
-  const dinoList = filteredByLetter.map(dino => <DisplayDinosaur key={dino.id} dino={dino} />);
+
+  function filteredDinoList(){
+    const filteredByName = dinosaurs.filter(dino => dino.name.toLowerCase().includes(name.toLowerCase()));
+    const filteredByLetter = filteredByName.filter(dino => dino.name[0].toUpperCase().includes(letter))
+    const filteredByRegion = filteredByLetter.filter(dino => dino.region.includes(regions))
+    const filteredByPeriod = filteredByRegion.filter(dino => dino.period.includes(periods));
+
+    return filteredByPeriod
+  } 
+
+  const dinoList = filteredDinoList().map(dino => <DisplayDinosaur key={dino.id} dino={dino} />);
   return (
     <div className='list'>
         <h1>Dinosaur Project</h1>

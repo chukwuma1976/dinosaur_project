@@ -12,7 +12,7 @@ class FactsController < ApplicationController
 
     def create
         fact = Fact.create(fact_params)
-        render json: fact, status: :create
+        render json: fact, status: :created
     end
 
     def update
