@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   resources :facts
   resources :dinosaurs
   resources :users
-  resources :collections
+  resources :collections, only: [:index]
   
   post '/login', to: 'sessions#create'
   post '/signup', to: 'users#create'

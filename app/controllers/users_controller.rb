@@ -7,6 +7,7 @@ class UsersController < ApplicationController
         if user.valid?
             user.create_collection(user_id: user.id)
             fill_collection_with_dinosaurs(user.collection)
+            byebug
             render json: user, status: :created
             session[:user_id] = user.id
         else
@@ -24,10 +25,21 @@ class UsersController < ApplicationController
 
     private
 
+    def user_params
+        params.permit(:usernames, :password, :password_confirmation)
+    end
+
     def fill_collection_with_dinosaurs(collection)
         dinosaurs = Dinosaur.all
         dinosaurs.each do |dinosaur|
-            new_dino = Dinosaur.create(dinosaur)
+            new_dino = Dinosaur.create({
+                name: dinosaur.name,
+                description: dinosaur.description,
+                image_url: "",
+                region: "",
+                period: "",
+                diet: "",
+            })
             collection.dinosaurs << new_dino
         end
     end

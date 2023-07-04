@@ -71,9 +71,15 @@ h1, h2, h3, h4, h5, h6 {
 
 .info p {
   font-size: 1.5em;
+  padding: 10px 10px;
 }
 .info{
   display: inline-block;
+  width: 420px
+}
+
+.info img {
+  width: 400px
 }
 
 .list {
@@ -121,10 +127,39 @@ h1, h2, h3, h4, h5, h6 {
 }
 .profile-expanded {
   border: 1px solid blue;
+  display: inline-block;
+  background-color: beige;
+  border-radius: 2rem;
+  position: fixed;
+  top: 10%;
+  left: 5%
+}
+.profile-expanded main {
+  display: flex;
+  justify-content: normal;
+  text-align: left;
+  padding: 10px;
+}
+.profile-expanded section {
+  width: 400px;
+}
+.profile-expanded img {
+  width: 380px;
+  height: auto;
+  object-fit: cover;
 }
 
 .profile img {
   width: 200px;
   height: 120px;
   object-fit: cover;
+}
+
+.update-form {
+  border: 1px solid powderblue;
+  border-radius: 1rem;
+  background-color: whitesmoke;
+}
+.update-form label {
+  padding: 10px;
 }

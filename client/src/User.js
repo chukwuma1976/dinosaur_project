@@ -36,8 +36,21 @@ function UserProvider({children}) {
         .then(setPeriods)
     },[])
 
+    const [stats, setStats] = useState([])
+
+    useEffect(() => {
+        fetch('/collections')
+        .then(res=>res.json())
+        .then(setStats)
+    },[])
+
     return (
-        <UserContext.Provider value={{user, setUser, dinosaurs, setDinosaurs, regions, setRegions, periods, setPeriods }}>
+        <UserContext.Provider value={{
+            user, setUser, 
+            dinosaurs, setDinosaurs, 
+            regions, setRegions, 
+            periods, setPeriods, 
+            stats, setStats }}>
             {children}
         </UserContext.Provider>
     )

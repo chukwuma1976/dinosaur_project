@@ -2,7 +2,7 @@ import React, {useState, useContext} from 'react'
 import { UserContext } from './User'
 import AddFacts from './AddFacts'
 
-function EditDinosaur({dino}) {
+function EditDinosaur({dino, setDisplayEdit}) {
     const {regions, periods, dinosaurs, setDinosaurs} = useContext(UserContext)
     const [errors, setErrors] = useState(null)
     const dietaryHabits = ["Carnivore", "Herbivore", "Omnivore"]
@@ -42,6 +42,7 @@ function EditDinosaur({dino}) {
                 res.json().then(dinosaur=>{
                     setDinosaur(dinosaur)
                     onUpdate(dinosaur)
+                    setDisplayEdit(false)
                 })
             } else {
                     res.json().then(errors=>setErrors(errors.errors))
@@ -51,8 +52,9 @@ function EditDinosaur({dino}) {
     }
 
   return (
-    <div>
-        <form className='' onSubmit={handleSubmit}>
+    <div className='update-form'>
+        <AddFacts dinosaur={dino} onUpdate={onUpdate} /><br/>
+        <form onSubmit={handleSubmit}>
             {errors ? errors.map(error=><p className="error" key={error}>{error}</p>) : null}
             <label htmlFor='image' name="image_url" className='region'>Enter an image URL</label >
             <input className='image' type='text' name='image_url' value={image} onChange={handleChange}/>
@@ -78,7 +80,6 @@ function EditDinosaur({dino}) {
             <button type='submit'>Submit</button>
             <br/><br/>
         </form>
-        <AddFacts dinosaur={dino} onUpdate={onUpdate} />
     </div>
   )
 }
