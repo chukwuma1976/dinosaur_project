@@ -19,7 +19,7 @@ class CollectionSerializer < ActiveModel::Serializer
         name: region.name, 
         numbers: num,
         fraction: num.to_f/dinosaurs.count,
-        percentage: (num.to_f/dinosaurs.count)*100
+        percentage: ((num.to_f/dinosaurs.count)*100).round(1)
       }
     end
   end
@@ -32,7 +32,7 @@ class CollectionSerializer < ActiveModel::Serializer
         name: period.name, 
         numbers: num,
         fraction: num.to_f/dinosaurs.count,
-        percentage: (num.to_f/dinosaurs.count)*100
+        percentage: ((num.to_f/dinosaurs.count)*100).round(1)
       }
     end
   end  
@@ -49,7 +49,7 @@ class CollectionSerializer < ActiveModel::Serializer
         name: diet, 
         numbers: num,
         fraction: num.to_f/total,
-        percentage: (num.to_f/total)*100
+        percentage: ((num.to_f/total)*100).round(1)
       }
     end
   end

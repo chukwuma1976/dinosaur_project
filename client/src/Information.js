@@ -1,8 +1,9 @@
-import React, {useContext} from 'react'
+import React, {useContext, useState, useEffect} from 'react'
 import {UserContext} from './User'
 
 function Information() {
     const {periods, regions, stats} = useContext(UserContext)
+
     const {total_dinosaurs, by_region, by_period, by_diet} = stats
 
     const regionsList = regions.map(region=><li key={region.id}>{region.name}</li>)
@@ -10,10 +11,9 @@ function Information() {
     const theWorld = "https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
 
     function listOf(list){
-        const stats = list.map(el=><li key={el.id}>{el.name}: numbers: {el.numbers} percentage: {el.percentage}%</li>)
-        return stats
+        const statistics = list.map(el=><li key={el.id}>{el.name}: numbers: {el.numbers} percentage: {el.percentage}%</li>)
+        return statistics
     }
-
 
   return (
     <div className='information'>

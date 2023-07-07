@@ -49,8 +49,8 @@ function UserProvider({children}) {
             user, setUser, 
             dinosaurs, setDinosaurs, 
             regions, setRegions, 
-            periods, setPeriods, 
-            stats, setStats }}>
+            periods, setPeriods,
+            stats, setStats}}>
             {children}
         </UserContext.Provider>
     )
