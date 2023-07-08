@@ -64,10 +64,10 @@ h1, h2, h3, h4, h5, h6 {
   top: 20%;
 }
 
-.informaton {
+.information {
   display: flex;
   justify-content: center;
-  top: 5%;
+  top: 3%;
   position: absolute;
 }
 
@@ -81,7 +81,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .info img {
-  width: 400px
+  width: 400px;
+  padding-top: 100px;
 }
 
 .list {
@@ -108,7 +109,7 @@ h1, h2, h3, h4, h5, h6 {
   display: flex;
   position: fixed;
   padding: 0 5px;
-  /* background: transparent; */
+  background: blueviolet;
   width: 100%;
   z-index: 1;
 }
