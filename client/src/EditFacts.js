@@ -25,7 +25,7 @@ function EditFacts({thisFact, dinosaur, onUpdate, setDisplayEdit}) {
     
   return (
     <div>
-        {errors ? errors.map(err=><p key={err}>{err}</p>) : null}
+        {errors ? errors.map(err=><p className="error" key={err}>{err}</p>) : null}
         <form onSubmit={addFact}>
             <input type="text" className='fact' value={fact} onChange={(e)=>setFact(e.target.value)}/>
             <button type="submit" >Submit</button>

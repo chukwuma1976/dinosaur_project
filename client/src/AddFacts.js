@@ -24,7 +24,7 @@ function AddFacts({dinosaur, onUpdate}) {
     
   return (
     <div>
-        {errors ? errors.map(err=><p key={err}>{err}</p>) : null}
+        {errors ? errors.map(err=><p className="error" key={err}>{err}</p>) : null}
         <form onSubmit={addFact}>
             <label>Enter a fact about this dinosaur</label>
             <input type="text" className='fact' value={fact} onChange={(e)=>setFact(e.target.value)}/>

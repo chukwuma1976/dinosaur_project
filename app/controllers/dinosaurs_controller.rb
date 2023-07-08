@@ -11,13 +11,13 @@ class DinosaursController < ApplicationController
     end
 
     def create
-        dinosaur = current_user.collection.dinosaurs.create(dinosaur_params)
+        dinosaur = current_user.collection.dinosaurs.create!(dinosaur_params)
         render json: dinosaur, status: :created
     end
 
     def update
         dinosaur = current_user.collection.dinosaurs.find(params[:id])
-        dinosaur.update(dinosaur_params)
+        dinosaur.update!(dinosaur_params)
         render json: dinosaur, status: :accepted
     end
 

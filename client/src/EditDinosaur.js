@@ -52,7 +52,7 @@ function EditDinosaur({dino, setDisplayEdit}) {
     }
 
   return (
-    <div className='update-form'>
+    <div >
         <AddFacts dinosaur={dino} onUpdate={onUpdate} /><br/>
         <form onSubmit={handleSubmit}>
             {errors ? errors.map(error=><p className="error" key={error}>{error}</p>) : null}

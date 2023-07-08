@@ -33,8 +33,10 @@ function DisplayDinosaur({dino}) {
             <h3>Facts:</h3>
             <div>{factsList}</div>
             <br/>
-            <button onClick={()=>setDisplayEdit(!displayEdit)}>{displayEdit? 'Hide Editing Form' : 'Display Editing Form'}</button>
-            {displayEdit ? <EditDinosaur dino={dino} setDisplayEdit={setDisplayEdit}/> : null}
+            <div className={displayEdit ? 'update-form' : null}>
+              <button onClick={()=>setDisplayEdit(!displayEdit)}>{displayEdit? 'Hide Editing Form' : 'Display Editing Form'}</button>
+              {displayEdit ? <EditDinosaur dino={dino} setDisplayEdit={setDisplayEdit}/> : null}
+            </div>
           </section>
         </div>
         : null}

@@ -11,13 +11,13 @@ class FactsController < ApplicationController
     end
 
     def create
-        fact = Fact.create(fact_params)
+        fact = Fact.create!(fact_params)
         render json: fact, status: :created
     end
 
     def update
         fact = Fact.find(params[:id])
-        fact.update(fact_params)
+        fact.update!(fact_params)
         render json: fact, status: :accepted
     end
 
