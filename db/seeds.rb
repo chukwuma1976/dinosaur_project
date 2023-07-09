@@ -1,3 +1,9 @@
+User.destroy_all
+Collection.destroy_all
+Dinosaur.destroy_all
+Region.destroy_all
+Period.destroy_all
+
 regions = [
     {name: 'North America',},
     {name: 'South America',},
@@ -25,17 +31,14 @@ periods = [
     },
 ]
 
-# regions.each do |region|
-#     Region.create(region)
-# end
+regions.each do |region|
+    Region.create(region)
+end
 
-# periods.each do |period|
-#     Period.create(period)
-# end
+periods.each do |period|
+    Period.create(period)
+end
 
-# User.destroy_all
-# Collection.destroy_all
-Dinosaur.destroy_all
 
 # create user here using your own name and password
 # uncomment out lines at the bottow of this file
@@ -12126,7 +12129,8 @@ dinosaurs = [
 ]
 
 dinosaurs.each do |dinosaur|
-    new_dino = Dinosaur.create(dinosaur)
+    # new_dino = Dinosaur.create(dinosaur)
+    Dinosaur.create(dinosaur)
     # collection.dinosaurs << new_dino
 end
 
