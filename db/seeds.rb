@@ -44,7 +44,7 @@ end
 # uncomment out lines at the bottow of this file
 
 user = User.create(username: "CASmooth", password: "Prime2913", password_confirmation: "Prime2913")
-collection = User.find(user.id).collection
+collection = User.find(user.id).create_collection
 
 dinosaurs = [
     {
