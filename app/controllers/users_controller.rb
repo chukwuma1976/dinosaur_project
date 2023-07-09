@@ -29,20 +29,18 @@ class UsersController < ApplicationController
     end
 
     def fill_collection_with_dinosaurs(collection)
-        collection = Dinosaurs.all
-        # dinosaurs = Dinosaur.all
-        # dinosaurs.each do |dinosaur|
-        #     new_dino = Dinosaur.create({
-        #         name: dinosaur.name,
-        #         description: dinosaur.description,
-        #         image_url: "",
-        #         region: "",
-        #         period: "",
-        #         diet: "",
-        #         collection_id: collection.id
-        #     })
-        #     collection.dinosaurs << new_dino
-        # end
+        dinosaurs = Dinosaur.all
+        dinosaurs.each do |dinosaur|
+            new_dino = collection.dinosaurs.create({
+                name: dinosaur.name,
+                description: dinosaur.description,
+                image_url: "",
+                region: "",
+                period: "",
+                diet: "",
+            })
+            # collection.dinosaurs << new_dino
+        end
     end
 
 end
