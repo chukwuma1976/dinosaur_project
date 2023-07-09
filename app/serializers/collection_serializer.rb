@@ -1,8 +1,24 @@
 class CollectionSerializer < ActiveModel::Serializer
-  attributes :id, :user_id, :total_dinosaurs, :by_region, :by_period, :by_diet
+  attributes :id, :user_id, :total_dinosaurs, :needs_updating, :by_region, :by_period, :by_diet
 
   def total_dinosaurs
     self.object.dinosaurs.count
+  end
+
+  def needs_updating
+    dinos_to_update = 0
+    dinosaurs = self.object.dinosaurs.count
+    self.object.dinosaurs.map do |dino|
+      if dino.image_url == "" && dino.region == "" && dino.period == "" && dino.facts.length == 0
+        dinos_to_update += 1
+      end
+    end
+    {
+      updated: dinosaurs - dinos_to_update,
+      percentage_updated: (((dinosaurs - dinos_to_update).to_f/dinosaurs)*100).round(1),
+      number_to_update: dinos_to_update, 
+      percentage_to_update: ((dinos_to_update.to_f/dinosaurs)*100).round(1)
+    }
   end
 
   def dino_summary

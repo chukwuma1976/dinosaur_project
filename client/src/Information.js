@@ -1,4 +1,4 @@
-import React, {useContext, useState, useEffect} from 'react'
+import React, {useContext} from 'react'
 import {UserContext} from './User'
 
 function Information() {
@@ -11,7 +11,7 @@ function Information() {
     const theWorld = "https://upload.wikimedia.org/wikipedia/commons/7/7f/Rotating_earth_animated_transparent.gif"
 
     function listOf(list){
-        const statistics = list.map(el=><li key={el.id}>{el.name}: numbers: {el.numbers} percentage: {el.percentage}%</li>)
+        const statistics = list.map(el=><li key={el.id}>{el.name}: numbers: {el.numbers} // percentage: {el.percentage}%</li>)
         return statistics
     }
 
@@ -25,6 +25,11 @@ function Information() {
             <h3>Dinosaurs once lived during these 3 major time periods: </h3>
             <ul>
                 {periodsList}
+            </ul>
+            <h3>Up to date status</h3>
+            <ul>
+                <li>Total number updated: {stats.needs_updating.updated} // Percentage updated: {stats.needs_updating.percentage_updated}%</li>
+                <li>Total number awaiting updates: {stats.needs_updating.number_to_update} // Percentage needing updating: {stats.needs_updating.percentage_to_update}%</li>
             </ul>
         </div>
         <div className='info'>
