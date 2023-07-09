@@ -29,7 +29,7 @@ To launch this application:
     bundle install
     rails s //this allows the application to run on a single local server
 
-    To run deployed application: 
+    To run deployed application: https://dinosaur-project.onrender.com
 
     make sure PostgreSQL is installed and started
         sudo apt update

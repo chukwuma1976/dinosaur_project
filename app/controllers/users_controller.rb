@@ -7,7 +7,6 @@ class UsersController < ApplicationController
         if user.valid?
             user.create_collection(user_id: user.id)
             fill_collection_with_dinosaurs(user.collection)
-            byebug
             render json: user, status: :created
             session[:user_id] = user.id
         else
