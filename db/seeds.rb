@@ -33,15 +33,15 @@ periods = [
 #     Period.create(period)
 # end
 
-User.destroy_all
-Collection.destroy_all
+# User.destroy_all
+# Collection.destroy_all
 Dinosaur.destroy_all
 
 # create user here using your own name and password
 # uncomment out lines at the bottow of this file
 
-user = User.create(username: "Your name", password: "your password", password_confirmation: "you password")
-collection = User.find(user.id).collection
+# user = User.create(username: "Your name", password: "your password", password_confirmation: "you password")
+# collection = User.find(user.id).collection
 
 dinosaurs = [
     {
@@ -12125,9 +12125,9 @@ dinosaurs = [
         }
 ]
 
-# dinosaurs.each do |dinosaur|
-#     new_dino = Dinosaur.create(dinosaur)
-#     collection.dinosaurs << new_dino
-# end
+dinosaurs.each do |dinosaur|
+    new_dino = Dinosaur.create(dinosaur)
+    # collection.dinosaurs << new_dino
+end
 
 puts "done seeding..."
