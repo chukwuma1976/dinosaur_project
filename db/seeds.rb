@@ -1,8 +1,8 @@
-User.destroy_all
-Collection.destroy_all
-Dinosaur.destroy_all
-Region.destroy_all
-Period.destroy_all
+# User.destroy_all
+# Collection.destroy_all
+# Dinosaur.destroy_all
+# Region.destroy_all
+# Period.destroy_all
 
 regions = [
     {name: 'North America',},
@@ -43,7 +43,7 @@ end
 # create user here using your own name and password
 # uncomment out lines at the bottow of this file
 
-user = User.create(username: "CASmooth", password: "Prime2913", password_confirmation: "Prime2913")
+user = User.create(username: "", password: "", password_confirmation: "")
 collection = User.find(user.id).create_collection
 
 dinosaurs = [

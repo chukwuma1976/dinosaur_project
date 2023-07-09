@@ -31,7 +31,7 @@ class UsersController < ApplicationController
     def fill_collection_with_dinosaurs(collection)
         dinosaurs = Dinosaur.all
         dinosaurs.each do |dinosaur|
-            new_dino = collection.dinosaurs.create({
+            new_dino = Dinosaur.create({
                 name: dinosaur.name,
                 description: dinosaur.description,
                 image_url: "",
@@ -39,7 +39,7 @@ class UsersController < ApplicationController
                 period: "",
                 diet: "",
             })
-            # collection.dinosaurs << new_dino
+            collection.dinosaurs << new_dino
         end
     end
 
