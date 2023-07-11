@@ -1,8 +1,8 @@
-# User.destroy_all
-# Collection.destroy_all
-# Dinosaur.destroy_all
-# Region.destroy_all
-# Period.destroy_all
+User.destroy_all
+Collection.destroy_all
+Dinosaur.destroy_all
+Region.destroy_all
+Period.destroy_all
 
 regions = [
     {name: 'North America',},
@@ -44,7 +44,7 @@ end
 # uncomment out lines at the bottow of this file
 
 user = User.create(username: "", password: "", password_confirmation: "")
-collection = User.find(user.id).create_collection
+collection = user.create_collection
 
 dinosaurs = [
     {
