@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorize, only: [:create, :fill_collection_with_dinosaurs]
+    skip_before_action :authorize, only: [:create]
     
     def create
         user = User.create!(user_params)
         if user.valid?
             user.create_collection(user_id: user.id)
-            fill_collection_with_dinosaurs(user.collection)
+            user.collection.fill_collection_with_dinosaurs
             render json: user, status: :created
             session[:user_id] = user.id
         else
@@ -26,20 +26,6 @@ class UsersController < ApplicationController
 
     def user_params
         params.permit(:usernames, :password, :password_confirmation)
-    end
-
-    def fill_collection_with_dinosaurs(collection)
-        dinosaurs = Dinosaur.all
-        dinosaurs.each do |dinosaur|
-            collection.dinosaurs.create({
-                name: dinosaur.name,
-                description: dinosaur.description,
-                image_url: "",
-                region: "",
-                period: "",
-                diet: ""
-            })
-        end
     end
 
 end
