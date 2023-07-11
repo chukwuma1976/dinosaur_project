@@ -43,8 +43,8 @@ end
 # create user here using your own name and password
 # uncomment out lines at the bottow of this file
 
-# user = User.create(username: "", password: "", password_confirmation: "")
-# collection = user.create_collection
+user = User.create(username: "CASmooth", password: "Prime2913", password_confirmation: "Prime2913")
+collection = user.create_collection
 
 dinosaurs = [
     {
@@ -12129,9 +12129,8 @@ dinosaurs = [
 ]
 
 dinosaurs.each do |dinosaur|
-    Dinosaur.create(dinosaur)
-    # new_dino = Dinosaur.create(dinosaur)
-    # collection.dinosaurs << new_dino
+    new_dino = Dinosaur.create(dinosaur)
+    collection.dinosaurs << new_dino
 end
 
 puts "done seeding..."

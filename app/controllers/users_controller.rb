@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
 
-    skip_before_action :authorize, only: [:create]
+    skip_before_action :authorize, only: [:create, :fill_collection_with_dinosaurs]
     
     def create
         user = User.create!(user_params)
