@@ -38,8 +38,8 @@ class UsersController < ApplicationController
                 region: "",
                 period: "",
                 diet: "",
+                collection_id: collection.id
             })
-            collection.dinosaurs << new_dino
         end
     end
 
