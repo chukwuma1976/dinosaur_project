@@ -6,7 +6,7 @@ class UsersController < ApplicationController
         user = User.create!(user_params)
         if user.valid?
             user.create_collection(user_id: user.id)
-            user.collection.fill_collection_with_dinosaurs
+            user.collection.seed_collection
             render json: user, status: :created
             session[:user_id] = user.id
         else
