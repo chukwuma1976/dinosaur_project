@@ -12129,7 +12129,6 @@ dinosaurs = [
 ]
 
 dinosaurs.each do |dinosaur|
-    # Dinosaur.create(dinosaur)
     new_dino = Dinosaur.create(dinosaur)
     collection.dinosaurs << new_dino
 end
