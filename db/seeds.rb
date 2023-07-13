@@ -1,3 +1,6 @@
+# to seed this database go to dinosaurs-build.sh file and uncomment out rake db:seed
+# create user on line 47 using your own name and password to intialize a user
+
 User.destroy_all
 Collection.destroy_all
 Dinosaur.destroy_all
@@ -39,11 +42,7 @@ periods.each do |period|
     Period.create(period)
 end
 
-
-# create user here using your own name and password
-# uncomment out lines at the bottow of this file
-
-user = User.create(username: "CASmooth", password: "Prime2913", password_confirmation: "Prime2913")
+user = User.create(username: "username", password: "password", password_confirmation: "password")
 collection = user.create_collection
 
 dinosaurs = [
