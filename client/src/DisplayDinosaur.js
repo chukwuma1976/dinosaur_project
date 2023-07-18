@@ -20,10 +20,10 @@ function DisplayDinosaur({dino}) {
         {expand ?
         <div>
           <section className='container-dino-fact'>
-            <p>Description: {description}</p>
-            <p>Region: {region}</p>
-            <p>Period: {period}</p>
-            <p>Diet: {diet}</p>
+            <p><strong>Description:</strong> {description}</p>
+            <p><strong>Region:</strong> {region}</p>
+            <p><strong>Period:</strong> {period}</p>
+            <p><strong>Diet:</strong> {diet}</p>
           </section>
         </div>
         : null}

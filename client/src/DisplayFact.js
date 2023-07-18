@@ -4,6 +4,7 @@ import { UserContext } from './User'
 
 function DisplayFact({fact, dino}) {
   const [displayEdit, setDisplayEdit] = useState(false)
+  const [displayButtons, setDisplayButtons] = useState(false)
   const {dinosaurs, setDinosaurs} = useContext(UserContext)
 
   function onUpdate(dinosaur){
@@ -24,12 +25,16 @@ function DisplayFact({fact, dino}) {
       <div className='fact-form'>
         {displayEdit ? 
         <EditFacts thisFact={fact} dinosaur={dino} onUpdate={onUpdate} setDisplayEdit={setDisplayEdit} /> 
-        : <p>{fact.interesting_fact}</p>}
+        : <p onClick={()=>setDisplayButtons(!displayButtons)}>{fact.interesting_fact}</p>}
       </div>
-      <button onClick={()=>setDisplayEdit(!displayEdit)}>
-        {displayEdit ? " hide edit" : "edit"}
-      </button>
-      <button onClick={()=>deleteFact()}>X</button>
+      {displayButtons ? 
+      <span>
+        <button onClick={()=>setDisplayEdit(!displayEdit)}>
+          {displayEdit ? " hide edit" : "edit"}
+        </button>
+        <button onClick={()=>deleteFact()}>X</button>
+      </span> 
+      : null}
     </div>
   )
 }
